@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Sen&display=swap');
+@import "variables.scss";
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    max-width: $page-width;
+    margin: 0 auto;
+}

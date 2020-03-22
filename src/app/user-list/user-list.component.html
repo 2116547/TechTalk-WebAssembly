@@ -1,20 +1,19 @@
 <h1>All users ({{usersList.length}})</h1><br>
 
-<div class="table">
-  <div class="table-header">
-    <div class="header__item"><a id="name" class="filter__link" href="#">Name</a></div>
-    <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Phone</a></div>
-    <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Email</a></div>
-    <div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Address</a></div>
-    <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">City</a></div>
-  </div>
-  <div class="table-content">
-    <div class="table-row" *ngFor="let item of usersList">
-      <div class="table-data">{{item.FIRST_NAME}} {{item.LAST_NAME}}</div>
-      <div class="table-data">{{item.PHONE}}</div>
-      <div class="table-data">{{item.EMAIL}}</div>
-      <div class="table-data">{{item.ADDRESS}}</div>
-      <div class="table-data">{{item.CITY}}</div>
-    </div>
-  </div>
-</div>
+
+<table id="user-list-table">
+  <tr>
+    <th (click)="sort('FIRST_NAME')">Name</th>
+    <th (click)="sort('PHONE')">Phone</th>
+    <th (click)="sort('EMAIL')">Email</th>
+    <th (click)="sort('ADDRESS')">Address</th>
+    <th (click)="sort('CITY')">City</th>
+  </tr>
+  <tr *ngFor="let user of usersList">
+    <td>{{user.FIRST_NAME}} {{user.LAST_NAME}}</td>
+    <td>{{user.PHONE}}</td>
+    <td>{{user.EMAIL}}</td>
+    <td>{{user.ADDRESS}}</td>
+    <td>{{user.CITY}}</td>
+  </tr>
+</table>

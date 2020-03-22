@@ -1,0 +1,19 @@
+<h1>All users ({{usersList.length}})</h1><br>
+
+
+<table id="user-list-table">
+  <tr>
+    <th (click)="sortTable(0)">Name</th>
+    <th (click)="sortTable(1)">Phone</th>
+    <th (click)="sortTable(2)">Email</th>
+    <th (click)="sortTable(3)">Address</th>
+    <th (click)="sortTable(4)">City</th>
+  </tr>
+  <tr *ngFor="let user of usersList">
+    <td>{{user.FIRST_NAME}} {{user.LAST_NAME}}</td>
+    <td>{{user.PHONE}}</td>
+    <td>{{user.EMAIL}}</td>
+    <td>{{user.ADDRESS}}</td>
+    <td>{{user.CITY}}</td>
+  </tr>
+</table>

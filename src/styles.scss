@@ -1,18 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Sen&display=swap');
+
 @import "variables.scss";
 
 * {
-    font-family: 'Roboto', sans-serif;
-    margin:0;
+  font-family: $font-pararaph;
 }
 
 body {
-    margin: 0;
-    font-size: 0.85rem;
+  margin: 0;
+  font-size: 1rem;
+  background-color: $background-color;
 }
 
-main {
-    max-width: $page-width;
-    margin: 0 auto;
+h1,
+h2 {
+  font-family: "Sen", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
 }

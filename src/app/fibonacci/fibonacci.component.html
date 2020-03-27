@@ -1,0 +1,68 @@
+<section>
+  <h1>Fibonacci WebAssembly vs. JavaScript</h1>
+  <p>
+    Met deze demo wordt de snelheid van WebAssembly afgemeten tegen JavaScript
+    middels het berekenen van de bekende rij van Fibonacci. Er is gekozen om
+    deze rij te berekenen volgens twee manieren, middels een for-loop en middels
+    een recursieve functie.
+  </p>
+
+  <div *ngIf="loaded" class="vscontainer">
+    <div class="options">
+      <form (ngSubmit)="start()">
+        <h2>Input</h2>
+        <label>Nummer:</label>
+        <input
+          type="number"
+          name="number"
+          required
+          min="1"
+          [(ngModel)]="number"
+          [disabled]="isCalculating"
+          autocomplete="off"
+        />
+        <label>Reeksen:</label>
+        <input
+          type="number"
+          name="runs"
+          required
+          min="1"
+          [(ngModel)]="runs"
+          [disabled]="isCalculating"
+          autocomplete="off"
+        />
+        <button type="submit" [ladda]="isCalculating">
+          Start
+        </button>
+      </form>
+    </div>
+
+    <div class="result">
+      <h2>Results</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">Loop</th>
+            <th scope="col">Recursive</th>
+            <th scope="col">Memoization</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let result of results">
+            <th scope="row">{{ result.name }}</th>
+            <td
+              *ngFor="
+                let func of ['fibonacciLoop', 'fibonacciRec', 'fibonacciMemo']
+              "
+              [class]="cellClass(result, func)"
+            >
+              {{ result[func] | humanizeTime }}
+              {{ fastDiff(result, func) }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

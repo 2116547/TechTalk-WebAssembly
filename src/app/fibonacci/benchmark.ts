@@ -7,7 +7,6 @@ export interface BenchmarkSuite {
   name: string;
   fibonacciLoop: FibonacciFunction;
   fibonacciRec: FibonacciFunction;
-  fibonacciMemo: FibonacciFunction;
 }
 
 export interface BenchmarkResult {
@@ -20,7 +19,6 @@ export interface BenchmarkResult {
 const warmupSuite = (suite: BenchmarkSuite) => {
   suite.fibonacciLoop(1);
   suite.fibonacciRec(1);
-  suite.fibonacciMemo(1);
 };
 
 function runAndMeasure(

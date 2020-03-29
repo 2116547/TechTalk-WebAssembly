@@ -1,6 +1,7 @@
 @import "../../variables.scss";
 
 .vscontainer {
+  padding-top: 3rem;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 16px;

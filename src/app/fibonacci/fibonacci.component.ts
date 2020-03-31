@@ -14,8 +14,7 @@ import {
 const jsSuite: BenchmarkSuite = {
   name: "JavaScript",
   fibonacciLoop,
-  fibonacciRec,
-  fibonacciMemo
+  fibonacciRec
 };
 
 @Component({
@@ -32,8 +31,8 @@ export class FibonacciComponent implements OnInit, OnDestroy {
   private wasmSuite: BenchmarkSuite;
 
   constructor(private http: HttpClient) {
-    this.number = 25;
-    this.runs = 10;
+    this.number = 30;
+    this.runs = 100;
   }
 
   ngOnInit() {
@@ -48,8 +47,7 @@ export class FibonacciComponent implements OnInit, OnDestroy {
       this.wasmSuite = {
         name: "WebAssembly",
         fibonacciLoop: wasmInstance.exports.fibonacciLoop as FibonacciFunction,
-        fibonacciRec: wasmInstance.exports.fibonacciRec as FibonacciFunction,
-        fibonacciMemo: wasmInstance.exports.fibonacciMemo as FibonacciFunction
+        fibonacciRec: wasmInstance.exports.fibonacciRec as FibonacciFunction
       };
       this.loaded = true;
     });

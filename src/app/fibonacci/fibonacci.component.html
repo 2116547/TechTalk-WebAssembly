@@ -42,19 +42,17 @@
       <table>
         <thead>
           <tr>
-            <th scope="col">&nbsp;</th>
+            <th scope="col">Taal</th>
             <th scope="col">Loop</th>
             <th scope="col">Recursive</th>
-            <th scope="col">Memoization</th>
+            <!-- <th scope="col">Memoization</th> -->
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let result of results">
             <th scope="row">{{ result.name }}</th>
             <td
-              *ngFor="
-                let func of ['fibonacciLoop', 'fibonacciRec', 'fibonacciMemo']
-              "
+              *ngFor="let func of ['fibonacciLoop', 'fibonacciRec']"
               [class]="cellClass(result, func)"
             >
               {{ result[func] | humanizeTime }}

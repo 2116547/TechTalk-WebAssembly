@@ -13,7 +13,6 @@ export interface BenchmarkResult {
   name: string;
   fibonacciLoop: number;
   fibonacciRec: number;
-  fibonacciMemo: number;
 }
 
 const warmupSuite = (suite: BenchmarkSuite) => {
@@ -69,7 +68,7 @@ export function runBenchmark(
         // Convert the array into object { func1: diff1, funct2: diff2, ... }
         reduce<{ [x: string]: number }, BenchmarkResult>(
           (acc, val) => Object.assign(acc, val),
-          <BenchmarkResult>{ name: suite.name }
+          { name: suite.name } as BenchmarkResult
         )
       )
     ),

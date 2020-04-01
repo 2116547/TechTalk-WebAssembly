@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Subscription } from "rxjs";
 import { mergeMap } from "rxjs/operators";
 import { environment } from "../../environments/environment";
-import { fibonacciLoop, fibonacciMemo, fibonacciRec } from "./fibonacci";
+import { fibonacciLoop, fibonacciRec } from "./fibonacci";
 import {
   BenchmarkSuite,
   BenchmarkResult,

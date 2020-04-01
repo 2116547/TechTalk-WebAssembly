@@ -13,7 +13,6 @@ export interface BenchmarkResult {
   name: string;
   fibonacciLoop: number;
   fibonacciRec: number;
-  fibonacciMemo: number;
 }
 
 const warmupSuite = (suite: BenchmarkSuite) => {

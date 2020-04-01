@@ -9,7 +9,8 @@
     "mocha-test": "mocha --timeout 10000 --reporter mocha-junit-reporter --reporter-options mochaFile=./test/test-result.xml",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prod-build-dev": "ng build --prod --build-optimizer"
+    "prod-build-dev": "ng build --prod --build-optimizer",
+    "sonar": "sonar-scanner"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "@types/node": "~10.12.18",
     "codelyzer": "^5.1.2",
     "prettier": "^1.19.1",
+    "sonar-scanner": "^3.1.0",
     "tslint": "^5.18.0",
     "typescript": "^3.7.5"
   }

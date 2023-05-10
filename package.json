@@ -23,7 +23,7 @@
     "angular2-ladda": "^3.0.0",
     "chai": "^4.2.0",
     "ladda": "^2.0.1",
-    "mocha": "^7.1.1",
+    "mocha": "^10.2.0",
     "mocha-junit-reporter": "^1.23.3",
     "request": "^2.88.2",
     "rxjs": "^6.5.4",
